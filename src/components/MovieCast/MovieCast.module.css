@@ -1,0 +1,65 @@
+.castItem{
+list-style-type: none;
+    overflow: hidden;
+    flex-basis: calc((100% - 48px) / 4);
+}
+
+.castList{
+list-style-type: none;
+display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding:0;
+    font-size: 16px;
+}
+
+
+.placeholder{
+    display: flex;
+    flex-direction: column;
+    padding: 27px 0;
+    align-items: center;
+}
+
+.iconNoImage{
+    width: 30px;
+    height: 30px;
+}
+
+.profileImage{
+    border-radius:10%;
+    width: 60px;
+    height:80px;
+}
+
+.nameActor,
+.character{
+margin:0;
+}
+
+@media screen and (min-width: 768px) {
+    .profileImage{
+        width: 80px;
+        height: 100px;
+    }
+        .castItem {
+            list-style-type: none;
+            overflow: hidden;
+            flex-basis: calc((100% - 48px) / 8);
+        }
+                .placeholder {
+                    padding: 36px 0;
+                }
+}
+
+@media screen and (min-width: 1280px) {
+    .profileImage {
+        width: 120px;
+        height: 160px;
+    }
+ .placeholder {
+     padding: 68px 0;
+ }
+ }
+
+

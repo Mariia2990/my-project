@@ -1,0 +1,43 @@
+.list{
+    list-style-type: none;
+    display: flex;
+    /* align-items: flex-start; */
+    font-size: 16px;
+    gap: 10px;
+    color:#64daff;
+    font-weight: 500;
+    /* text-align: left; */
+    flex-wrap: wrap;
+    padding: 0;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.posterList{
+    width: 80px;
+    height: 130px;
+}
+
+.item {
+color: #64daff;
+}
+
+@media screen and (min-width: 768px) {
+.list {
+    font-size: 20px;
+}
+.posterList {
+    width: 150px;
+    height: 250px;
+}
+}
+
+@media screen and (min-width: 1280px) {
+    .list {
+        font-size: 24px;
+    }
+        .posterList {
+            width: 250px;
+            height: 350px;
+        }
+}

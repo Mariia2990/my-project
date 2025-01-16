@@ -1,0 +1,17 @@
+.titleMovie{
+    font-size: 32px;
+    color: #b9d1d8;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .titleMovie {
+    font-size: 46px;
+        }
+}
+
+@media screen and (min-width: 1280px) {
+    .titleMovie {
+        font-size: 56px;
+    }
+}

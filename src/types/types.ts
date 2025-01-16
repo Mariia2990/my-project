@@ -6,8 +6,13 @@ export interface Movie {
 }
 
 export interface MovieDetails extends Movie {
+  title: string;
+  poster_path: string;
   genres: { id: number; name: string }[];
   runtime: number;
+  vote_average: number; 
+  release_date: string;
+  overview: string;
 }
 
 export interface CastMember {
@@ -18,7 +23,7 @@ export interface CastMember {
 }
 
 export interface Review {
-  id: string;
+  id: number;
   author: string;
   content: string;
 }

@@ -22,7 +22,7 @@ const MoviesPage: React.FC = () => {
     try {
       const results = await searchMovies(query);
       if (results.length === 0) {
-        toast.info("No movies found! Try another query.");
+        toast.error("No movies found! Try another query.");
       }
       setMovies(results);
     } catch (error) {

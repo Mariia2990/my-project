@@ -6,23 +6,37 @@ import { MdOutlineImageNotSupported } from "react-icons/md";
 import { CastMember } from '@/types/types';
 
 const MovieCast: React.FC = () => {
-    const { movieId } = useParams<{movieId: string}>();
+  const { movieId } = useParams<{ movieId: string | undefined }>();
   const [cast, setCast] = useState <CastMember[]>([]);
   
     useEffect(() => {
-        const getMovieCast = async () => {
-            try {
-                const castData = await fetchMovieCast(parseInt(movieId));
-                setCast(castData);
-            } catch (error) {
-                console.error('Failed to fetch movie cast:', error);
-            }
+      const getMovieCast = async () => {
+        if (!movieId) {
+          console.error("Movie ID is undefined");
+          return;
         }
-        getMovieCast();
+
+        const numericMovieId = Number(movieId);
+        if (isNaN(numericMovieId)) {
+          console.error("Movie ID is not a valid number");
+          return;
+        }
+
+        try {
+          const castData = await fetchMovieCast(numericMovieId);
+          setCast(castData);
+        } catch (error) {
+          console.error("Failed to fetch movie cast:", error);
+        }
+      };
+
+      getMovieCast();
     }, [movieId]);
+
     if (cast.length === 0) {
-        return <p>No cast information available for this movie.</p>;
-    };
+      return <p>No cast information available for this movie.</p>;
+    }
+
 
 return (
     <ul className={css.castList}>

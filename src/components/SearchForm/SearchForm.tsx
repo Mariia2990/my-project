@@ -33,7 +33,11 @@ const SearchForm: FC<SearchFormProps> = ({ onSubmit, initialQuery = '' }) => {
             name="query"
             placeholder="Search for a movie..."
           />
-          <ErrorMessage name="query" component="div" style={{ color: "red" }} />
+          <ErrorMessage
+            name="query"
+            component="div"
+            className={css.errorMessage}
+          />
           <button type="submit" className={css.btnSearch}>
             Search
           </button>
